@@ -30,10 +30,9 @@ namespace ConsoleApp1
         }
         public void removeStudent(int studentId)
         {
-            _context.Remove(_context.Students.
-                Where(p => p.StudentId.Equals(studentId)).
-                FirstOrDefault());
-            _context.SaveChanges();
+            _context.Remove(_context.Students
+            .FirstOrDefault(p => p.StudentId.Equals(studentId)));
+            _context.SaveChanges();        
         }
 
         public void EditStudent(Student student)

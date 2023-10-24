@@ -22,6 +22,11 @@ namespace ConsoleApp1
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Student>().Property(x => x.StudentName).HasMaxLength(50);
+            modelBuilder.Entity<Group>().HasData(
+            new { GroupId = 1, GroupName = "ФИИТ"},
+            new { GroupId = 2, GroupName = "МОАИС" },
+            new { GroupId = 3, GroupName = "ПМИ" }
+            );
         }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
